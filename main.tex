@@ -1,0 +1,168 @@
+\documentclass[12pt]{extarticle}
+\usepackage{lmodern} % Required for inserting images
+\usepackage{graphicx} % Required for inserting images
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+
+
+\title{Statistics For Data Science}
+\author{Akash Tesla}
+\date{July 2025}
+
+\begin{document}
+\tableofcontents
+\newpage
+\maketitle
+\section{Basic Terminologies}
+
+\subsection{Population}
+An entire set of items you want to study 
+
+\subsection{Sample} 
+A subset of population used to estimate statistical behavior of the whole population 
+
+\subsection{Histogram}
+A histogram is a graphical representation of numerical data that groups the data into bins and displays the frequency of data points within each bin as bars
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\linewidth]{images/histogram_example.png}
+    \caption{Example of a Histogram}
+    \label{fig:enter-label}
+\end{figure}
+
+
+\subsection{Law of large numbers}
+As the number of trials (or samples) increases, the sample average (or empirical mean) will converge to the expected value (or population mean).
+\subsubsection{Weak Law of large numbers}
+The weak law states that the sample average of a sequence of independent identically distributed(i.i.d.) random variables converges in probability to the expected value as the number of samples goes to infinity
+$$\bar{X_n} = \frac{1}{n}\sum_{i=1}^{n}X_i \xrightarrow{p} \mu \quad as \ n \to \infty $$
+which means, 
+$$\forall \varepsilon>0, \lim_{n \to \infty}^n \mathbf{p}(|\bar{X}_n-\mu| > \varepsilon) = 0 $$
+\subsubsection{Strong Law of large numbers}
+The strong law states that the sample average of a sequence of i.i.d. random variables converges almost surely to the expected value as the number of samples goes to infinity 
+
+$$\bar{X}_n = \frac{1}{n} \sum_{i=1}^n X_i \xrightarrow{a.s.} \mu \quad as\ n \to \infty$$
+Which means, 
+$$ \mathrm{P}(\lim_{n \to \infty} \bar{X}_n = \mu ) = 1 $$
+
+\section{Measure of Central Tendency} 
+
+\subsection{Mean} Average of all data points, sensitive to outliers since a single large outlier could easily skew mean 
+
+$$ \mu = \frac{\sum x_i}{n} $$ 
+
+\subsection{Median}
+The middle data point when data are stored, robust to outliers 
+
+\subsection{Mode}
+The most frequent data point of the dataset  
+
+\section{Measure of Spread}
+Range: Difference between minimum value and maximum value 
+
+$$ Range = x_{max} - x_{min} $$ 
+
+\subsection{Variance}
+Average squared deviation  
+
+$$ \sigma^2 = \frac{\sum (x_i - \mu)^2}{n} (Population) $$ 
+$$ s^2 = \frac{\sum( \bar{x_i} - \mu)^2}{n-1} (Sample)  $$ 
+
+\subsection{Standard Deviation}
+Root of Variance 
+
+$$ \sigma = \sqrt{\sigma^2} $$
+\subsection{Inter Quartile Range(IQR)}
+Difference between 75th Percentile/3rd Quartile and 25th Percentile/1st Quartile, it is used for outlier detection 
+$$IQR = Q_3 - Q_1$$ 
+
+\section{Probability Distributions}
+
+\subsection{Discrete Distributions}
+A discrete probability distribution describes the probability of occurrence of each value of a discrete random variable
+\begin{itemize}
+    \item Discrete random variable: Countable values like 1,2,3
+    \item Each individual value has an associated probability 
+    \item The sum of probabilities for all possible values is 1
+    $$ \sum_i \mathrm{P}(X=x_i)=1$$
+\end{itemize}
+
+
+
+
+
+\subsection{Continuous Distributions}
+
+
+\section{Shape fo the Distributions}
+\subsection{Skewness} 
+Measure of Asymmetry  
+\subsubsection{Right-skewed} 
+tail on the right (\(mean > median\)) 
+
+\subsubsection{Left-skewed}
+tail on the left (\(mean < median\))
+
+\section{Evaluation Metrics}
+
+\subsection{Mean Absolute Error}  
+
+$$MAE = \frac{1}{n}\sum{|y_i - \hat{y_i}|}$$ 
+\begin{itemize}
+    \item Robust to outliers, treats all errors equally doesn’t square the errors like RMSE,MSE..etc 
+    \item It’s used when your model can tolerate moderate outliers  
+    \item Interpretability - Has same unit as the thing you are predicting/easy to understand 
+    \item Gives out constant gradient (bad for gradient based loss function) 
+\end{itemize}
+ 
+\subsubsection{Gradient of MAE} 
+$$
+\frac{d}{d\hat{y}}|y - \hat{y}| = 
+\begin{cases} 
++1 & \text{if }  \hat{y} < y \\ 
+-1 & \text{if }  \hat{y} > y \\ 
+\text{undefined} & \text{if } \hat{y} = y 
+\end{cases} 
+$$
+As you can see no matter how far the error is from true value it always gives a constant gradient as it treats every error as same
+stics
+\subsection{Mean Squared Error}
+$$MAE = \frac{1}{n}\sum{(y_i - \hat{y_i})^2}$$ 
+\begin{itemize}
+    \item Penalizes large errors/outliers 
+    \item Gives out strong gradient signals  
+\end{itemize}
+\subsubsection{Gradient of MSE}
+$$\frac{d MSE}{d\hat{y}} = -\frac{2}{n}(y-\hat{y})$$
+It points in the direction of the error, and it grows linearly with size of the error
+Larger the gradient, when prediction are more wrong \(\longrightarrow\) model adjusts faster
+
+
+\subsection{Root Mean Squared Error(RMSE)}  
+$$RMSE = \sqrt{MSE}$$ 
+\begin{itemize}
+    \item It combines interpretability of MAE and sensitive to errors of MSE
+    \item It has smooth gradient curves just like MSE, and it's preferred for gradient descent 
+\end{itemize}
+
+\subsubsection{Gradient of RMSE}
+$$ \frac{d RMSE}{\hat{y_i}} = \frac{1}{n * RMSE} (\hat{y_i}-y_i)$$
+\begin{enumerate}
+    \item The gradient strength changes with RMSE, if your RMSE is very large the gradient becomes small, and if your RMSE is very small the gradient becomes large.
+    \item It makes RMSE a Non-constantly scaled loss
+    \item MSE is preferred over RMSE in training, but RMSE is preferred while reporting for interpretability  
+\end{enumerate}
+\subsection{R-Square(\(R^2\))}
+\subsection{Adjusted \(R^2\)}
+\subsection{Huber Loss}
+\subsection{MAPE}
+
+
+\section{TODO}
+\begin{enumerate}
+    \item other eval metrics precision, recall, f1 etc..
+
+\end{enumerate}
+
+\end{document}
