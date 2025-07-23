@@ -159,11 +159,7 @@ File: l3backend-xetex.def 2022-02-07 L3 backend support: XeTeX
 \g__pdf_backend_object_int=\count272
 \g__pdf_backend_annotation_int=\count273
 \g__pdf_backend_link_int=\count274
-) (main.aux
-
-LaTeX Warning: Label `fig:enter-label' multiply defined.
-
-)
+) (main.aux)
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 15.
@@ -187,7 +183,8 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 15.
 LaTeX Font Info:    ... okay on input line 15.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 15.
 LaTeX Font Info:    ... okay on input line 15.
- (main.toc
+
+(main.toc
 LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 2
 .
  (ot1lmr.fd
@@ -215,8 +212,7 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <6> on input line 2.
 LaTeX Font Info:    Trying to load font information for U+msa on input line 2.
-
-(umsa.fd
+ (umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
 LaTeX Font Info:    Trying to load font information for U+msb on input line 2.
@@ -238,17 +234,28 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 File: images/histogram_example.png Graphic file (type bmp)
 <images/histogram_example.png>
  [3] [4] [5]
-Overfull \hbox (5.19202pt too wide) in paragraph at lines 83--84
+Overfull \hbox (5.19202pt too wide) in paragraph at lines 84--85
 \TU/lmr/m/n/12 Difference between 75th Percentile/3rd Quartile and 25th Percent
 ile/1st Quar-
  []
 
-[6]
+[6] [7]
 File: images/bernoulli_example.png Graphic file (type bmp)
 <images/bernoulli_example.png>
- [7] [8] [9] [10] (main.aux)
 
-LaTeX Warning: There were multiply-defined labels.
+Underfull \hbox (badness 10000) in paragraph at lines 160--165
 
- )
-Output written on main.xdv (10 pages, 77900 bytes).
+ []
+
+[8]
+Underfull \hbox (badness 10000) in paragraph at lines 172--174
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 178--179
+
+ []
+
+[9] [10] [11] [12] (main.aux) )
+Output written on main.xdv (12 pages, 104888 bytes).

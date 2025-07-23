@@ -31,7 +31,7 @@ A histogram is a graphical representation of numerical data that groups the data
     \centering
     \includegraphics[width=0.5\linewidth]{images/histogram_example.png}
     \caption{Example of a Histogram}
-    \label{fig:enter-label}
+    \label{fig:1}
 \end{figure}
 
 
@@ -51,7 +51,8 @@ $$ \mathrm{P}(\lim_{n \to \infty} \bar{X}_n = \mu ) = 1 $$
 
 \section{Measure of Central Tendency} 
 
-\subsection{Mean} Average of all data points, sensitive to outliers since a single large outlier could easily skew mean 
+\subsection{Mean/Expected Value} 
+Average of all data points, sensitive to outliers since a single large outlier could easily skew mean 
 
 $$ \mu = \frac{\sum x_i}{n} $$ 
 
@@ -116,14 +117,84 @@ Also written as
 $$ \mathrm{P}(X=x) = p^x(1-p)^{1-x}, \quad \text{for x }\epsilon \ \{0,1\}$$
 
 \subsubsection{Statistical Parameters}
+\textbf{Mean}\\
+Mean is the expected value over many repetitions of the same single-trial experiment,
+thus it would be p since, p is probability of 1 appearing and (1-p) is probability of 0 appearing
+$$\mu = 1*(p)+0*(1-p)$$
+$$\mu = p$$
+\textbf{Variance}\\
+Variance can be defined as \( \sigma^2 = E(X^2) - (E(x))^2\), Refer Variance chapter. 
+For Bernoulli distribution, \(E(X^2) = p, E(X) = p\), substituting we get
+$$\sigma^2 = p - p^2$$
+$$\sigma^2 = p(1-p)$$
+\textbf{Mode}\\
+Mode for Bernoulli would what ever the outcome which is more favored, which can be defined as  
+$$
+Mode = 
+\begin{cases}
+    1 & \text{If \(p > 0.5 \)}  \\
+    0 & \text{If \(p < 0.5\)}
+\end{cases}
+$$
+\subsubsection{Examples}
+\begin{itemize}
+    \item Will it rain tomorrow?
+    \item Will this patient recover?
+    \item Will this product be defective?
+\end{itemize}
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.5\linewidth]{images/bernoulli_example.png}
-    \caption{Example of a Benoulli Distribution}
+    \caption{Example of a Bernoulli Distribution}
     \label{fig:enter-label}
 \end{figure}
 
+\subsection{Binomial}
+Binomial Distribution is a discrete probability distribution that models the probability of obtaining a specific number of successes
+in a fixed number of independent trials(n), these independent trials are just Bernoulli trials, you could see the similarity between
+them in statistical parameters
+
+\subsubsection{Probability Mass Function(PMF)}
+
+$$ P(X=x) = nCx * p^x * (1-p)^{(n-x)} $$
+where,\\
+n - no of trials,\\ 
+p - probability of success\\
+x - number of success\\
+
+\subsubsection{Statistical Parameters}
+\textbf{Mean}\\
+Mean represents Average number of success from your trails which would be number of trials (n) times probability of success (p)
+$$ \mu = n*p $$
+\textbf{Variance}\\
+Variance represents Expected variance between mean and data points 
+$$ \sigma^2 = n*p*(1-p) $$
+\textbf{Mode}\\
+$$ Mode = 
+\begin{cases}
+  \text{floor(n+1)p)} & \text{if (n+1)p is not an Integer} \\
+  \text{floor((n+1)p), floor((n+1)(1-p))} & \text{if (n+1)p is an Integer} \\
+\end{cases}$$ \\
+$$ \text{Mode(if p = 0.5)} = 
+\begin{cases}
+  \frac{n}{2} & \text{if (n+1)p is not an Integer} \\
+  \frac{(n-1)}{2},\frac{(n+1)}{2} & \text{if (n+1)p is an Integer} \\
+\end{cases}
+$$
+\subsubsection{Examples}
+\begin{itemize}
+    \item How many patients will recover out of 50?
+    \item How many rainy days this month?
+    \item How many defective products in a batch of 1000?
+\end{itemize}
+
+\subsection{Negative-Binomial}
+\subsection{Multinomial}
+\subsection{Geometric}
+\subsection{Hypergeometric}
+\subsection{Poisson}
+\subsection{Discrete Uniform}
 
 
 
