@@ -162,27 +162,27 @@ File: l3backend-xetex.def 2022-02-07 L3 backend support: XeTeX
 ) (main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 15.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 13.
 LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 1
-5.
+3.
  (ts1cmr.fd
 File: ts1cmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
 
 (main.toc
 LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 2
@@ -226,15 +226,15 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
  [2]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <14.4> on input line 18.
+(Font)              <14.4> on input line 16.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 18.
+(Font)              <10> on input line 16.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 18.
+(Font)              <7> on input line 16.
 File: images/histogram_example.png Graphic file (type bmp)
 <images/histogram_example.png>
  [3] [4] [5]
-Overfull \hbox (5.19202pt too wide) in paragraph at lines 84--85
+Overfull \hbox (5.19202pt too wide) in paragraph at lines 82--83
 \TU/lmr/m/n/12 Difference between 75th Percentile/3rd Quartile and 25th Percent
 ile/1st Quar-
  []
@@ -243,19 +243,19 @@ ile/1st Quar-
 File: images/bernoulli_example.png Graphic file (type bmp)
 <images/bernoulli_example.png>
 
-Underfull \hbox (badness 10000) in paragraph at lines 160--165
+Underfull \hbox (badness 10000) in paragraph at lines 158--163
 
  []
 
 [8]
-Underfull \hbox (badness 10000) in paragraph at lines 172--174
+Underfull \hbox (badness 10000) in paragraph at lines 170--172
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 178--179
+Underfull \hbox (badness 10000) in paragraph at lines 176--177
 
  []
 
-[9] [10] [11] [12] (main.aux) )
-Output written on main.xdv (12 pages, 104888 bytes).
+[9] [10] [11] [12] [13] (main.aux) )
+Output written on main.xdv (13 pages, 112760 bytes).

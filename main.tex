@@ -6,8 +6,6 @@
 \usepackage{amsfonts}
 \usepackage{float}
 
-
-
 \title{Statistics For Data Science}
 \author{Akash Tesla}
 \date{July 2025}
@@ -240,7 +238,7 @@ $$
 As you can see no matter how far the error is from true value it always gives a constant gradient as it treats every error as same
 stics
 \subsection{Mean Squared Error}
-$$MAE = \frac{1}{n}\sum{(y_i - \hat{y_i})^2}$$ 
+$$MSE = \frac{1}{n}\sum{(y_i - \hat{y_i})^2}$$ 
 \begin{itemize}
     \item Penalizes large errors/outliers 
     \item Gives out strong gradient signals  
@@ -265,7 +263,29 @@ $$ \frac{d RMSE}{\hat{y_i}} = \frac{1}{n * RMSE} (\hat{y_i}-y_i)$$
     \item It makes RMSE a Non-constantly scaled loss
     \item MSE is preferred over RMSE in training, but RMSE is preferred while reporting for interpretability  
 \end{enumerate}
+
 \subsection{R-Square(\(R^2\))}
+\(R^2\) is the coefficient of determination. it tells how well your regression model 
+explains the variation in the dependent variable(Y) using independent variables(X)
+$$R^2 = 1-\frac{SS_{res}}{SS_{tot}}$$
+where,
+\begin{itemize}
+    \item \(SS_{res} = \sum(y_i - \hat{y_i})^2 \to\) Residual sum of squares(error)/MSE
+    \item \( SS_{tot} = \sum(y_i - \bar{y_i})^2 \to\) Total sum of squares (total variability)
+\end{itemize}
+$$R^2 = 1-\frac{ \sum(y_i - \hat{y_i})^2 }{ \sum(y_i - \bar{y_i})^2} $$
+Or, it can also be written more intuitively as 
+$$ R^2 = 1 - \frac{MSE}{\sigma^2} $$
+Let us understand the formula (1-) operator just switches from maximizing to minimizing
+so you can ignore that. \\
+\(\frac{MSE}{\sigma^2}\) Explains how well our model performs to a model that just 
+predicts mean everytime, so if the ratio is 1, then our model is same as the dumb model,
+we have to reduce the ratio but the world likes "more the better" approach 
+add (1-) operator we have to maximize the error and it's called as \(R^2\) 
+
+
+
+
 \subsection{Adjusted \(R^2\)}
 \subsection{Huber Loss}
 \subsection{MAPE}
