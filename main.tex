@@ -82,9 +82,9 @@ $$ \sigma = \sqrt{\sigma^2} $$
 Difference between 75th Percentile/3rd Quartile and 25th Percentile/1st Quartile, it is used for outlier detection 
 $$IQR = Q_3 - Q_1$$ 
 We calculate lower bounds and upper bounds to detect the outliers
-$$ \text{lower bound}= Q1-1.5*IQR$$
-$$ \text{upper bound}= Q3+1.5*IQR$$
-the data points which values outside of the bounds is considered to be outliers, for more extreme detection \(3*IQR\) is also used
+$$ \text{lower bound}= Q1-1.5 \times IQR$$
+$$ \text{upper bound}= Q3+1.5 \times IQR$$
+the data points which values outside of the bounds is considered to be outliers, for more extreme detection \(3 \times IQR\) is also used
 
 \section{Probability Distributions}
 
@@ -118,7 +118,7 @@ $$ \mathrm{P}(X=x) = p^x(1-p)^{1-x}, \quad \text{for x }\epsilon \ \{0,1\}$$
 \textbf{Mean}\\
 Mean is the expected value over many repetitions of the same single-trial experiment,
 thus it would be p since, p is probability of 1 appearing and (1-p) is probability of 0 appearing
-$$\mu = 1*(p)+0*(1-p)$$
+$$\mu = 1 \times (p)+0 \times (1-p)$$
 $$\mu = p$$
 \textbf{Variance}\\
 Variance can be defined as \( \sigma^2 = E(X^2) - (E(x))^2\), Refer Variance chapter. 
@@ -155,7 +155,7 @@ them in statistical parameters
 
 \subsubsection{Probability Mass Function(PMF)}
 
-$$ P(X=x) = nCx * p^x * (1-p)^{(n-x)} $$
+$$ P(X=x) = nCx \times p^x \times (1-p)^{(n-x)} $$
 where,\\
 n - no of trials,\\ 
 p - probability of success\\
@@ -164,10 +164,10 @@ x - number of success\\
 \subsubsection{Statistical Parameters}
 \textbf{Mean}\\
 Mean represents Average number of success from your trails which would be number of trials (n) times probability of success (p)
-$$ \mu = n*p $$
+$$ \mu = n \times p $$
 \textbf{Variance}\\
 Variance represents Expected variance between mean and data points 
-$$ \sigma^2 = n*p*(1-p) $$
+$$ \sigma^2 = n \times p \times (1-p) $$
 \textbf{Mode}\\
 $$ Mode = 
 \begin{cases}
@@ -257,7 +257,7 @@ $$RMSE = \sqrt{MSE}$$
 \end{itemize}
 
 \subsubsection{Gradient of RMSE}
-$$ \frac{d RMSE}{\hat{y_i}} = \frac{1}{n * RMSE} (\hat{y_i}-y_i)$$
+$$ \frac{d RMSE}{\hat{y_i}} = \frac{1}{n \times RMSE} (\hat{y_i}-y_i)$$
 \begin{enumerate}
     \item The gradient strength changes with RMSE, if your RMSE is very large the gradient becomes small, and if your RMSE is very small the gradient becomes large.
     \item It makes RMSE a Non-constantly scaled loss
@@ -276,19 +276,74 @@ where,
 $$R^2 = 1-\frac{ \sum(y_i - \hat{y_i})^2 }{ \sum(y_i - \bar{y_i})^2} $$
 Or, it can also be written more intuitively as 
 $$ R^2 = 1 - \frac{MSE}{\sigma^2} $$
-Let us understand the formula (1-) operator just switches from maximizing to minimizing
+
+\begin{itemize}
+    \item Let us understand the formula (1-) operator just switches from maximizing to minimizing
 so you can ignore that. \\
-\(\frac{MSE}{\sigma^2}\) Explains how well our model performs to a model that just 
-predicts mean everytime, so if the ratio is 1, then our model is same as the dumb model,
+    \item \(\frac{MSE}{\sigma^2}\) Explains how well our model performs to a model that 
+just predicts mean everytime, so if the ratio is 1, then our model is same as the dumb model,
 we have to reduce the ratio but the world likes "more the better" approach 
 add (1-) operator we have to maximize the error and it's called as \(R^2\) 
-
-
-
+\item \(R^2\) ranges from \((-\infty,1]\)
+\end{itemize}
 
 \subsection{Adjusted \(R^2\)}
+$$ R^2_{adj} = 1 - \left(\frac{(1-R^2)(n-1)}{n-k-1}\right) $$
+The above mentioned is textbook formula but we use our simplified 
+representation for \(R^2\)
+$$ R^2 = 1 - \frac{MSE}{\sigma^2} $$
+so, \(R^2_{adj}\) would be
+$$ R^2_{adj} = 1 - \frac{MSE_{adj}}{\sigma^2_{adj}} $$
+MSE adjusted accounts for the number of freedoms used up to predict the data, 
+which is K,represents number of parameters like number of predictors, number of bias
+$$ MSE_{adj} = \frac{\sum(y_i-\hat{y_i})^2}{n-k} $$
+Variance adjusted for number of freedoms used up which is 1 (mean), 
+thus it'd be n-1 insted of n
+$$ \sigma^2_{adj} = \frac{\sum(y_i-\mu)^2}{n-1} $$
+Substituting we get,
+$$ R^2_{adj} = 1 - \left(\frac{MSE}{\sigma^2} \times \frac{n-1}{n-k}\right) $$
+where 
+\begin{itemize}
+    \item n - number of samples/ training samples
+    \item k - number of parameters
+\end{itemize}
+
+\subsection{Mean Absolute Percentage Error(MAPE)}
+MAPE is a metric used to measure accuracy of a predictive model. It expresses the 
+prediction error as the percentage of actual values
+$$ MAPE = \frac{1}{n}\sum_{i=1}^{n}\left|\frac{y_i-\hat{y_i}}{y_i}\right| \times 100 $$
+MAPE is just like MAE but it gives out the error in percentage thus it's easier to intrepret 
+
 \subsection{Huber Loss}
-\subsection{MAPE}
+Huber loss is a robust loss function/evaluation metric that has both strengths of MAE and MSE
+
+
+$$
+L_\delta = 
+\begin{cases} 
+    \frac{1}{2}(y-\hat{y})^2 & \text{for }|y-\hat{y}| \le \delta \\
+    \delta \cdot (|y-\hat{y}|-1/2 \delta) & \text{otherwise} \\
+\end{cases}
+$$
+where, 
+\begin{itemize}
+    \item \( \delta \) is a hyperparameter that controls the behavior between 
+        MSE and MAE behavior
+\end{itemize}
+
+\subsubsection{Gradient of Huberloss}
+
+\[
+\frac{\partial L}{\partial \hat{y}} =
+\begin{cases}
+-(y - \hat{y}) & \text{if } |y - \hat{y}| \leq \delta \\
+-\delta \cdot \operatorname{sign}(y - \hat{y}) & \text{otherwise}
+\end{cases}
+\]
+
+Example
+
+
 
 
 \section{TODO}
