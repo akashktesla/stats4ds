@@ -341,7 +341,66 @@ where,
 \end{cases}
 \]
 
-Example
+example graph goes here
+
+\section{Evaluation Metrics for Classification}
+
+\subsection{Basic Terminologies}
+
+\subsubsection*{True Positive}
+Correctly predicted positive class
+
+\subsubsection*{False Positive}
+Falsely Predicted Positive class, actually negative
+
+\subsubsection*{True Negative}
+Correctly predicted negative class
+
+\subsubsection*{False Negative}
+Falsely predicted negative class, actually positive 
+
+\subsection{Accuracy}
+Out of all predictions how many are correct, 
+ratio between correct predictions and total predictions is accuracy
+$$ Accuracy = \frac{\text{Correct predictions}} {\text{Total predictions}} $$
+can also be written as,
+$$ Accuracy = \frac{TP+TN}{TP+TN+FP+FN}  $$
+
+\subsection{Precision}
+Out of all my positive class prediction how much did I get correctly, 
+ratio between correct positive class prediction and total positive class predicted
+$$ \text{Precision} = \frac{\text{No of correct positive class predicted}}{\text{No of positive class predicted }} $$
+can also be written as,
+$$\text{Precision} = \frac{TP}{TP+FP}$$
+Use when FP is costly, when you want every positive prediction to be trust worthy, measures reliability
+
+\subsection{Negative Predicted Value (NPV)}
+Out of all my negative predictions how much did I get correctly, 
+ratio between
+$$ \text{NPV} = \frac{\text{No of correct negative class predicted}}{\text{No of negative class predicted }} $$
+can also be written as,
+$$\text{NPV} = \frac{\text{TN}}{\text{TN} + \text{FN}}$$
+Use when FN is costly, when you want every negative class to be trust worthy
+
+\subsection{Recall}
+Out of all positive cases how many did I predict correctly, 
+ratio of correctly predicted positive class and total positive cases
+$$ \text{Recall} = \frac{\text{No of correctly predicted positive class}}{\text{No of actual positive class}}  $$
+$$ \text{Recall} = \frac{TP}{TP+FN}$$
+Use when FN is costly/ wrongly classifying , did it recall everything, predict all positive cases
+
+\subsection{Specificity}
+Out of all negative cases how many did I predict correctly, Basically Recall for negative class
+$$ \text{Specificity} = \frac{\text{No of correctly predicted negative class}}{\text{No of actual negative class}}  $$
+$$ \text{Specificity} = \frac{TN}{TN+FP}$$
+Use when FP is costly, when predicting negative class is important
+
+\subsection{F1-score}
+
+\section{Hypothesis Testing}
+
+
+
 
 
 
