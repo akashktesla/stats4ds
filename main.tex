@@ -214,7 +214,7 @@ tail on the right (\(mean > median\))
 \subsubsection{Left-skewed}
 tail on the left (\(mean < median\))
 
-\section{Evaluation Metrics}
+\section{Evaluation Metrics for Regression}
 
 \subsection{Mean Absolute Error}  
 
@@ -395,21 +395,32 @@ $$ \text{Specificity} = \frac{\text{No of correctly predicted negative class}}{\
 $$ \text{Specificity} = \frac{TN}{TN+FP}$$
 Use when FP is costly, when predicting negative class is important
 
-\subsection{F1-score}
+\subsection{F-score}
+It's a harmonic mean between precision and recall
+
+$$F_\beta = \frac{(1 + \beta^2) \cdot \text{Precision} \cdot \text{Recall}}{(\beta^2 \cdot \text{Precision}) + \text{Recall}}$$
+\subsubsection{Derivation} 
+$$ \frac{1}{F_\beta} = \frac{w_p}{\text{Precision}} + \frac{w_r}{Recall} $$
+We want harmonic ratio of precision and recall, 
+$$ \frac{w_r}{w_p} = \beta^2$$
+We want the weights to add up to one
+$$ w_r + w_p = 1 $$
+By solving we get
+$$ w_r = \frac{\beta^2}{1 + \beta^2} $$ 
+$$ w_p = \frac{1}{1 + \beta^2} $$
+
+\section{AUC-ROC curve}
+\section{Regularization}
+\subsection{}
 
 \section{Hypothesis Testing}
 
 
-
-
-
-
-
 \section{TODO}
 \begin{enumerate}
-    \item other eval metrics precision, recall, f1 etc..
-    \item complete the Distributions
+    \item complete the Distributions, some intro to probability
     \item p-value and how to make conclusions with stats
+    \item Time series, ML, other stuff
 
 \end{enumerate}
 
