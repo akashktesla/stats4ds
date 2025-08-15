@@ -33,7 +33,7 @@ A histogram is a graphical representation of numerical data that groups the data
 \end{figure}
 
 
-\subsection{Law of large numbers}
+\section{Law of large numbers}
 As the number of trials (or samples) increases, the sample average (or empirical mean) will converge to the expected value (or population mean).
 \subsubsection{Weak Law of large numbers}
 The weak law states that the sample average of a sequence of independent identically distributed(i.i.d.) random variables converges in probability to the expected value as the number of samples goes to infinity
@@ -46,6 +46,26 @@ The strong law states that the sample average of a sequence of i.i.d. random var
 $$\bar{X}_n = \frac{1}{n} \sum_{i=1}^n X_i \xrightarrow{a.s.} \mu \quad as\ n \to \infty$$
 Which means, 
 $$ \mathrm{P}(\lim_{n \to \infty} \bar{X}_n = \mu ) = 1 $$
+
+\section{Central-Limit Theorem}
+
+\section{Types of Data}
+\subsection{Qualitative Data}
+Describes Qualities, Charesteristics , or categories
+\subsubsection{Nominal}
+Pure categories without order, 
+Example: blood type(A,B,AB,O), brand names
+\subsubsection{Ordinal}
+Categories with meaningfull order,
+Examples: Rank, Survey rating
+\subsection{Quantitative Data}
+Measureable quantities, Number have meaningfull terms in terms of magnitude
+\subsubsection{Discrete}
+Countable values, no in-betweens. 
+Examples: number of cars
+\subsubsection{Continuous}
+Countinous measurements; can take any value within a range, 
+Examples: Height, weight, temperature
 
 \section{Measure of Central Tendency} 
 
@@ -166,7 +186,9 @@ x - number of success\\
 Mean represents Average number of success from your trails which would be number of trials (n) times probability of success (p)
 $$ \mu = n \times p $$
 \textbf{Variance}\\
-Variance represents Expected variance between mean and data points 
+Variance represents Expected variance between mean and data points,
+It's basically MSE of a model that just predicts mean, that kinda gives an intutitive 
+understanding of how it measures spread
 $$ \sigma^2 = n \times p \times (1-p) $$
 \textbf{Mode}\\
 $$ Mode = 
@@ -410,6 +432,9 @@ $$ w_r = \frac{\beta^2}{1 + \beta^2} $$
 $$ w_p = \frac{1}{1 + \beta^2} $$
 
 \section{AUC-ROC curve}
+\subsection{ (ROC)}
+
+
 \section{Regularization}
 \subsection{}
 
