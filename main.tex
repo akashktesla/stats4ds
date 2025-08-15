@@ -86,7 +86,9 @@ Range: Difference between minimum value and maximum value
 $$ Range = x_{max} - x_{min} $$ 
 
 \subsection{Variance}
-Average squared deviation  
+Average squared deviation, Variance represents Expected variance between mean and data points,
+It's basically MSE of a model that just predicts mean, that kinda gives an intutitive 
+understanding of how it measures spread
 
 $$\sigma^2 = E[(X - \mu)^2]$$
 $$\sigma^2 = E[(X - E[X])^2]$$
@@ -187,8 +189,6 @@ Mean represents Average number of success from your trails which would be number
 $$ \mu = n \times p $$
 \textbf{Variance}\\
 Variance represents Expected variance between mean and data points,
-It's basically MSE of a model that just predicts mean, that kinda gives an intutitive 
-understanding of how it measures spread
 $$ \sigma^2 = n \times p \times (1-p) $$
 \textbf{Mode}\\
 $$ Mode = 

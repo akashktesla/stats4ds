@@ -240,7 +240,7 @@ and names
  []
 
 [6] [7]
-Overfull \hbox (5.19202pt too wide) in paragraph at lines 102--103
+Overfull \hbox (5.19202pt too wide) in paragraph at lines 104--105
 \TU/lmr/m/n/12 Difference between 75th Percentile/3rd Quartile and 25th Percent
 ile/1st Quar-
  []
@@ -249,7 +249,7 @@ ile/1st Quar-
 File: images/bernoulli_example.png Graphic file (type bmp)
 <images/bernoulli_example.png>
 
-Underfull \hbox (badness 10000) in paragraph at lines 178--183
+Underfull \hbox (badness 10000) in paragraph at lines 180--185
 
  []
 
@@ -269,4 +269,4 @@ Underfull \hbox (badness 10000) in paragraph at lines 303--305
  []
 
 [14] [15] [16] [17] [18] [19] (main.aux) )
-Output written on main.xdv (19 pages, 173052 bytes).
+Output written on main.xdv (19 pages, 173700 bytes).
