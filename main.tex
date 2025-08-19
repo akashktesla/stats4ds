@@ -406,8 +406,8 @@ can also be written as,
 $$\text{NPV} = \frac{\text{TN}}{\text{TN} + \text{FN}}$$
 Use when FN is costly, when you want every negative class to be trust worthy
 
-\subsection{Recall}
-Out of all positive cases how many did I predict correctly, 
+\subsection{Recall(TPR)}
+Out of all positive cases how many did I predict correctly, also known as True Positive Rate(TPR)
 ratio of correctly predicted positive class and total positive cases
 $$ \text{Recall} = \frac{\text{No of correctly predicted positive class}}{\text{No of actual positive class}}  $$
 $$ \text{Recall} = \frac{TP}{TP+FN}$$
@@ -418,6 +418,12 @@ Out of all negative cases how many did I predict correctly, Basically Recall for
 $$ \text{Specificity} = \frac{\text{No of correctly predicted negative class}}{\text{No of actual negative class}}  $$
 $$ \text{Specificity} = \frac{TN}{TN+FP}$$
 Use when FP is costly, when predicting negative class is important
+
+\subsection{False Positive Rate(FPR)}
+Out of all negative cases how many did I fail to predict, 
+$$ \text{FPR} = \frac{No of wrongly predicted negative class}{No of actual Negative class} $$
+$$ \text{FPR} = \frac{FP}{TN+FP} $$
+$$ \text{FPR} = 1 - \text{specificity}$$
 
 \subsection{F-score}
 It's a harmonic mean between precision and recall
@@ -434,11 +440,36 @@ $$ w_r = \frac{\beta^2}{1 + \beta^2} $$
 $$ w_p = \frac{1}{1 + \beta^2} $$
 
 \section{AUC-ROC curve}
-\subsection{ (ROC)}
+\subsection{Receiver Operating Characteristic (ROC)}
+The ROC curve plots the True Positive Rate(TPR) vs False Positive Rate(FPR) at various threshold settings,
+it let's you decide which one is best for you based on your requirement
+\subsection{Area Under the Curve (AUC)}
+The AUC tells how much of the curve is under the line,
+usually compared with other models\\
+Higher AUC = Better model performance \\
 
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|}
+        \hline
+        Auc Score & Intrepretation \\
+        \hline
+         0.5 &  Random guessing \\
+         0.7 - 0.8 & Acceptable \\
+         0.8 - 0.9 & Excellent \\
+         \textgreater 0.9 & Outstanding\\
+         \hline     
+    \end{tabular}
+\end{table}
 
 \section{Regularization}
-\subsection{}
+Regularization adds a penalty for complexity to prevent overfitting, make model simpler
+$$\text{Regularized Loss} = \text{Loss + Regularization parameter}$$
+
+\subsection{Lasso(Least Absolute Shrinkage and Selection)(L1)}
+$$L1 = \lambda \cdot \sum|w_i| $$
+\subsection{L2}
+\subsection{Elastic net}
 
 \section{Hypothesis Testing}
 

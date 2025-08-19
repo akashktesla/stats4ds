@@ -268,5 +268,21 @@ Underfull \hbox (badness 10000) in paragraph at lines 305--307
 
  []
 
-[14] [15] [16] [17] [18] [19] (main.aux) )
-Output written on main.xdv (19 pages, 174704 bytes).
+[14] [15] [16] [17] [18]
+Overfull \hbox (10.96146pt too wide) in paragraph at lines 444--446
+\TU/lmr/m/n/12 The ROC curve plots the True Positive Rate(TPR) vs False Positiv
+e Rate(FPR)
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 447--450
+
+ []
+
+[19]
+Overfull \hbox (9.18227pt too wide) in paragraph at lines 469--469
+[]\TU/lmr/bx/n/14.4 Lasso(Least Absolute Shrinkage and Selection)(L1) 
+ []
+
+[20] (main.aux) )
+Output written on main.xdv (20 pages, 187180 bytes).
