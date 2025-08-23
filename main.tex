@@ -466,12 +466,46 @@ Higher AUC = Better model performance \\
 Regularization adds a penalty for complexity to prevent overfitting, make model simpler
 $$\text{Regularized Loss} = \text{Loss + Regularization parameter}$$
 
-\subsection{Lasso(Least Absolute Shrinkage and Selection)(L1)}
-$$L1 = \lambda \cdot \sum|w_i| $$
+\subsection{L1}
+L1 adds the sum of absolute value of coefficients to the loss function, 
+it is used for feature selection since it encourages the optimizer to shirnk
+unwanted features to zero
+$$\text{L1} = \lambda \sum|w_i| $$
+
 \subsection{L2}
+L2 adds teh sum of coefficient squares to the loss function this 
+makes the gradient strength smooth, thus it won't reduce everything 
+to zero, but towards zero, use it when you think all features contribute
+to ur model
+
+$$ \text{L2} = \lambda \sum w_i^2 $$
+
 \subsection{Elastic net}
+It's a combination of L1 and L2 where you want to have both sparsity(l2) 
+and stability(l2)
+$$ \text{Elastic Net} = \alpha \text{L1} + (1-\alpha)\text{L2} $$
 
 \section{Hypothesis Testing}
+
+\subsection{Null Hypothesis($H_0$)}
+Null Hypothesis is the default claim basically means no effect/ no differnce
+
+\subsection{Alternate Hypothesis($H_a$)}
+Alternate Hypothesis is the hypothesis that u want to prove
+
+\subsection{Test Statistic}
+
+A test statistic is a function of the sample data that is used to decide
+whether to accept/reject the null hypothesis
+$$ \text{Test Statistic} = \frac{\text{How surprised we are}}{\text{How surprised we can be}} $$
+$$ \text{Test Statistic} =
+\frac{\text{Observed Value - Expected value under $H_0$ }} {\text{Standard Error of observed value}} $$
+
+
+
+
+\section{Machine Learning}
+\section{Time Series}
 
 
 \section{TODO}
@@ -479,7 +513,6 @@ $$L1 = \lambda \cdot \sum|w_i| $$
     \item types of data, pca
     \item complete the Distributions, some intro to probability
     \item p-value and how to make conclusions with stats
-    \item central limit theorem, 
     \item Time series, ML, other stuff
 
 \end{enumerate}
