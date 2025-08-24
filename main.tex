@@ -217,7 +217,7 @@ $$
 \subsection{Hypergeometric}
 \subsection{Poisson}
 \subsection{Discrete Uniform}
-
+\subsection{Normal Distribution}
 
 
 \subsubsection{Use cases}
@@ -493,6 +493,18 @@ Null Hypothesis is the default claim basically means no effect/ no differnce
 \subsection{Alternate Hypothesis($H_a$)}
 Alternate Hypothesis is the hypothesis that u want to prove
 
+\subsection{One sided Test}
+When you have to test if the parameter is greater than or less than the 
+hypothesised value, but not both \\
+Null:$H_0: \mu = \mu_0 $ \\
+Alternate:$H_a: \mu > \mu_0$ or $\mu < \mu_0$
+
+\subsection{Two sided Test}
+When you have to test if the parameter is different from the hypothesised value
+in either direction
+Null:$H_0: \mu = \mu_0 $ \\
+Alternate:$H_a: \mu \neq \mu_0$
+
 \subsection{Test Statistic}
 A test statistic is a function of the sample data that is used to decide
 whether to accept/reject the null hypothesis
@@ -501,10 +513,18 @@ $$ \text{Test Statistic} = \frac{\text{How surprised we are}}{\text{How surprise
 $$ \text{Test Statistic} =
 \frac{\text{Observed Value - Expected value under $H_0$ }} {\text{Standard Error of observed value}} $$
 
-\subsection{}
+\subsection{Sampling distribution under $H_0$}
+If null hypothesis is true, what would the distribution of my test statistic look like 
+across repeated samples. the sample mean/ test statistic follows normal distribution 
+thanks to CLT (central limit theorem), we use that to calculate p-value.
+\begin{enumerate}
+    \item Calculate sample statistic($\bar{x}$,$s^2$)
+    \item Compute test statisctic(t-test,z-test...)
+    \item Compare the computed test statistic to the corresponding distribution
+        to get the p-value
+\end{enumerate}
 
-
-
+\subsection{p-value}
 
 
 \section{Machine Learning}
