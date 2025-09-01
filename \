@@ -407,88 +407,25 @@ $$ x_i = \text{log}(x+c) $$
     \item used in exponentialisque data to make it more linear
     \item Compresses large numbers, spreads out small ones to make
         distribution closer to normal
-\end{itemize}
 
 \subsection{Text processing}
 lemmatizaiton and so on
 
-\subsubsection{Lowercasing}
-Converts all the letters into lowercase
+% \subsubsection{Lowercasing}
+% Converts all the letters into lowercase
 
-\subsubsection{Noise Removal}
-Remove punctuation, numbers, symbols,stopwords(if not useful)
+% \subsubsection{Noise Removal}
+% Remove punctuation, numbers, symbols,stopwords(if not useful)
 
-\subsubsection{Tokenization}
-\begin{itemize}
-    \item Convert sentence into smaller units token 
-    \item example: I like data science = [I,like, data, science]
-    \item Tokens are mostly words but not always
-\end{itemize}
-\subsubsection{Stemming}
-\begin{itemize}
-    \item chops suffixes from the words
-    \item example: "playing" $\to$ "play", "studies" $\to$ "studi"
-\end{itemize}
+% \subsubsection{Tokenization}
+% Convert sentence into smaller units token \\
+% example: I like data science = [I,like, data, science]\\
+% Tokens are mostly words but not always
 
-\subsubsection{Lematization}
-\begin{itemize}
-    \item Advanced form of stemming
-    \item reduces to dictionary base form
-    \item example: "playing" $\to$ "play", "studies" $\to$ "study"
-    \item requires POS(part of speech) tagging, slower but better
-\end{itemize}
+% \subsubsection{Stemming}
+% chops
 
-\subsection{Handling spelling and special entities}
-\begin{itemize}
-    \item Spelling correction
-    \item Handle emojis, mention, hashtags (social media)
-\end{itemize}
-\subsection{Name Entity Recognition}
-\begin{itemize}
-    \item NER can be used for censoring sensity information
-    \item for extracting NER and use it as features for the algorithms
-\end{itemize}
-
-\subsection{Encoding}
-\subsubsection{Bag of Words(BOW)}
-\begin{itemize}
-    \item Bag of words is one-hot encoding for words
-    \item Dictionary based bag of words is often used for larger datasets
-    \item It represent frequency of words in a vector format
-\end{itemize}
-
-\subsubsection{Term frequency-Inverse document frequency (TF-IDF)}
-\begin{itemize}
-    \item Mesure How important a word is to a document relative to the whole corpus
-    \item common words, less importance
-    \item Rare document specific word, higher importance
-    \item Vectorize a word BOW style and find TF-IDF for each words to form a vector
-        which can be used alongside with cosine similarity to find similar documents
-    \item Drawbacks - doesn't consider order of the words
-\end{itemize}
-$$
-TFIDF(t, d) = TF(t,d) \times IDF(t)
-$$
-Term Frequency is defined as number of times term t appears in document d by 
-total number terms in the document
-$$
-TF(t, d) = \frac{f_{t,d}}{\sum_{t' \in d} f_{t',d}}
-$$
-Inverse Document Frequency is a penalty for words that appear in many documents
-$$
-IDF(t) = \log \left( \frac{N}{DF(t)} \right)
-$$
-
-\subsubsection{Embedding}
-\begin{itemize}
-    \item Word2vec,embedding models
-    \item converts words/sentences to vectors
-    \item the embedding enocdes the meaning of the sentence / word
-    \item Words similar to each other are near to each other
-\end{itemize}
-
-
-\subsection{Image processing}
+% \subsection{Image processing}
 
 
 

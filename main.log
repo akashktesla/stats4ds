@@ -220,11 +220,11 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 2.
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
-] [2])
+] [2] [3])
 \tf@toc=\write3
 \openout3 = `main.toc'.
 
- [3] [4]
+ [4]
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <14.4> on input line 16.
 LaTeX Font Info:    External font `lmex10' loaded for size
@@ -263,21 +263,39 @@ Overfull \hbox (4.6728pt too wide) in paragraph at lines 287--289
 and names 
  []
 
-[14] [15] [16]
-Underfull \hbox (badness 10000) in paragraph at lines 379--381
+[14]
+Underfull \hbox (badness 10000) in paragraph at lines 304--307
 
  []
 
-[17] [18] [19] [20] [21]
-Overfull \hbox (10.96146pt too wide) in paragraph at lines 518--520
+Missing character: There is no ≤ (U+2264) in font [lmroman12-regular]:mapping=t
+ex-text;!
+
+Overfull \hbox (46.6801pt too wide) in paragraph at lines 308--323
+[] 
+ []
+
+[15]
+Overfull \hbox (5.19202pt too wide) in paragraph at lines 327--329
+\TU/lmr/m/n/12 Difference between 75th Percentile/3rd Quartile and 25th Percent
+ile/1st Quar-
+ []
+
+[16] [17] [18] [19] [20] [21] [22] [23]
+Underfull \hbox (badness 10000) in paragraph at lines 568--570
+
+ []
+
+[24] [25] [26] [27] [28]
+Overfull \hbox (10.96146pt too wide) in paragraph at lines 707--709
 \TU/lmr/m/n/12 The ROC curve plots the True Positive Rate(TPR) vs False Positiv
 e Rate(FPR)
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 521--524
+Underfull \hbox (badness 10000) in paragraph at lines 710--713
 
  []
 
-[22] [23] (main.aux) )
-Output written on main.xdv (23 pages, 223672 bytes).
+[29] [30] (main.aux) )
+Output written on main.xdv (30 pages, 306020 bytes).
