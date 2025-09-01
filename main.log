@@ -220,10 +220,64 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 2.
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
-]
-! Misplaced \crcr.
-\endtabular ->\crcr 
-                    \egroup \egroup $\egroup 
-l.59 ...}Feature engineering \and selection}{13}{}
-                                                  %
-Output written on main.xdv (1 page, 23368 bytes).
+] [2])
+\tf@toc=\write3
+\openout3 = `main.toc'.
+
+ [3] [4]
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <14.4> on input line 16.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10> on input line 16.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <7> on input line 16.
+File: images/histogram_example.png Graphic file (type bmp)
+<images/histogram_example.png>
+ [5] [6] [7]
+Overfull \hbox (5.19202pt too wide) in paragraph at lines 89--91
+\TU/lmr/m/n/12 Difference between 75th Percentile/3rd Quartile and 25th Percent
+ile/1st Quar-
+ []
+
+[8] [9]
+File: images/bernoulli_example.png Graphic file (type bmp)
+<images/bernoulli_example.png>
+ [10]
+Underfull \hbox (badness 10000) in paragraph at lines 166--171
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 178--180
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 184--185
+
+ []
+
+[11] [12] [13]
+Overfull \hbox (4.6728pt too wide) in paragraph at lines 287--289
+\TU/lmr/m/n/12 Pure categories without order, Example: blood type(A,B,AB,O), br
+and names 
+ []
+
+[14] [15] [16]
+Underfull \hbox (badness 10000) in paragraph at lines 379--381
+
+ []
+
+[17] [18] [19] [20] [21]
+Overfull \hbox (10.96146pt too wide) in paragraph at lines 518--520
+\TU/lmr/m/n/12 The ROC curve plots the True Positive Rate(TPR) vs False Positiv
+e Rate(FPR)
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 521--524
+
+ []
+
+[22] [23] (main.aux) )
+Output written on main.xdv (23 pages, 223672 bytes).
