@@ -449,8 +449,7 @@ Remove punctuation, numbers, symbols,stopwords(if not useful)
     \item for extracting NER and use it as features for the algorithms
 \end{itemize}
 
-\subsection{Encoding}
-\subsubsection{Bag of Words(BOW)}
+\subsection{Encoding} \subsubsection{Bag of Words(BOW)}
 \begin{itemize}
     \item Bag of words is one-hot encoding for words
     \item Dictionary based bag of words is often used for larger datasets
@@ -489,7 +488,7 @@ $$
 
 
 \subsection{Image processing}
-\subsubsection{Resizing and Cropping}
+\subsubsection{Resizing \& Cropping}
 Scaling and cropping to have fixed dimension either to ingest the images into 
 a fixed pipeline \\
 Example: ResNet expects a 224 X 224 
@@ -526,14 +525,55 @@ each channels accordingly
 Use pretrained segmentation models like Mask R-CNN, U-net, deeplap, to predict
 the subjects and create masks for it
 
+\section{Feature engineering \& selection}
 
-\section{Feature engineering and selection}
+\subsection{Filter Methods}
+Filter methods uses statistics to determine wheather the feature is fit to be
+in the model 
 
+\subsubsection{Correlation coefficient}
+\begin{itemize}
+    \item Measures how strongly linearly(Pearson) or montonically(Spearman, Kendall) related
+to the target
+    \item Drop Features that are highly correlated with each other (redunadant features)
+    \item Don't drop features that are less correlated with the target, since they could be 
+        correlated in a complex way 
+\end{itemize}
+
+\subsubsection{Chi square test}
+Chi square is like MSE for the model that assumes features are independent, 
+if the error aka chi square is high then they must be dependent, calculate
+chi-square for target variable and feature, if they are low disgard it
+$$ \chi^2 = \sum \frac{(O-E)^2}{E} $$
+where,
+\begin{itemize}
+    \item O = Observed Frequency
+    \item E = Expected Frequency 
+\end{itemize}
+
+\subsubsection{Annova F-test}
+
+
+\subsubsection{Variance Threshold}
+Calcualte variance of the data if variance is low, disgard It
+(too little information)
+
+\subsection{Wrapper Methods}
+
+\subsection{Embedded Methods}
+
+\subsection{Dimensionality Reduction}
+\subsubsection{Principal Component Analysis (PCA)}
+
+\subsection{Domain Knowledge}
+Research about the target variable and features and through domain
+knowledge you could predict/ assume wheather the feature is related 
+to the target variable or not \\
+Example: for titanic dataset, gender and survived are related because
+we know females are evacuated first
 
 \section{Supervised Learning}
 \section{Unsupervised Learning}
-
-
 
 \section{Evaluation Metrics for Regression}
 
@@ -724,11 +764,11 @@ $$ \text{FPR} = 1 - \text{specificity}$$
 
 \subsection{F-score}
 It's a harmonic mean between precision and recall
-
 $$F_\beta = \frac{(1 + \beta^2) \cdot \text{Precision} \cdot \text{Recall}}{(\beta^2 \cdot \text{Precision}) + \text{Recall}}$$
 \subsubsection{Derivation} 
 $$ \frac{1}{F_\beta} = \frac{w_p}{\text{Precision}} + \frac{w_r}{Recall} $$
 We want harmonic ratio of precision and recall, 
+$\beta$ is how much more you care about recall then precision
 $$ \frac{w_r}{w_p} = \beta^2$$
 We want the weights to add up to one
 $$ w_r + w_p = 1 $$
