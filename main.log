@@ -159,7 +159,17 @@ File: l3backend-xetex.def 2022-02-07 L3 backend support: XeTeX
 \g__pdf_backend_object_int=\count272
 \g__pdf_backend_annotation_int=\count273
 \g__pdf_backend_link_int=\count274
-) (main.aux)
+) (main.aux
+
+LaTeX Warning: Label `fig:enter-label' multiply defined.
+
+
+LaTeX Warning: Label `fig:enter-label' multiply defined.
+
+
+LaTeX Warning: Label `fig:enter-label' multiply defined.
+
+)
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 13.
@@ -183,8 +193,7 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 13.
 LaTeX Font Info:    ... okay on input line 13.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 13.
 LaTeX Font Info:    ... okay on input line 13.
-
-(main.toc
+ (main.toc
 LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 2
 .
  (ot1lmr.fd
@@ -212,7 +221,8 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <6> on input line 2.
 LaTeX Font Info:    Trying to load font information for U+msa on input line 2.
- (umsa.fd
+
+(umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
 LaTeX Font Info:    Trying to load font information for U+msb on input line 2.
@@ -281,21 +291,38 @@ Overfull \hbox (5.19202pt too wide) in paragraph at lines 327--329
 ile/1st Quar-
  []
 
-[17] [18] [19] [20] [21] [22] [23] [24] [25] [26]
-Underfull \hbox (badness 10000) in paragraph at lines 643--645
+[17] [18] [19] [20] [21] [22] [23] [24]
+Underfull \hbox (badness 10000) in paragraph at lines 590--591
 
  []
 
-[27] [28] [29] [30] [31]
-Overfull \hbox (10.96146pt too wide) in paragraph at lines 782--784
+[25] [26]
+File: images/timeseries1.png Graphic file (type bmp)
+<images/timeseries1.png>
+File: images/timeseries2.png Graphic file (type bmp)
+<images/timeseries2.png>
+ [27] [28]
+File: images/timeseries3.png Graphic file (type bmp)
+<images/timeseries3.png>
+ [29] [30] [31]
+Underfull \hbox (badness 10000) in paragraph at lines 783--785
+
+ []
+
+[32] [33] [34] [35] [36]
+Overfull \hbox (10.96146pt too wide) in paragraph at lines 922--924
 \TU/lmr/m/n/12 The ROC curve plots the True Positive Rate(TPR) vs False Positiv
 e Rate(FPR)
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 785--788
+Underfull \hbox (badness 10000) in paragraph at lines 925--928
 
  []
 
-[32] [33] (main.aux) )
-Output written on main.xdv (33 pages, 349784 bytes).
+[37] [38] (main.aux)
+
+LaTeX Warning: There were multiply-defined labels.
+
+ )
+Output written on main.xdv (38 pages, 410296 bytes).

@@ -551,15 +551,56 @@ where,
     \item E = Expected Frequency 
 \end{itemize}
 
-\subsubsection{Annova F-test}
-
-
+\subsubsection{ANOVA F-test}
+ANOVA stands for Analysis of Variance. it's a statistical method used to 
+compare three or more group means to see if at-least one is significantly 
+different, if you got two groups use t-test
+$$F = \frac{\text{Variance between groups}}{\text{How much data varies inside each group}}$$
+and calculate p value based on the f-score, and degree of freedom of both numerator and 
+denominator. with p value you can either reject or accept the null's hypothesis \\
+Nulls Hypothesis $H_0$ - All groups are the same\\
+Alternate Hypothesis $H_a$ - one or more group is different from each other
 
 \subsubsection{Variance Threshold}
 Calcualte variance of the data if variance is low, disgard It
 (too little information)
 
 \subsection{Wrapper Methods}
+\subsubsection{Forward selection}
+\begin{enumerate}
+    \item Start with empty feature
+    \item train on all features 
+    \item evaluate the model (use metrics + cross validation)
+    \item select the best forming one 
+    \item repeat 2 - 4 till you hit maximum number of features or performances changes are 
+    negligible or negative
+\end{enumerate}
+
+\subsubsection{Backward Elimination}
+Start with all features, train your model using full feature set, evaluate statistical 
+significance (p-value) remove the one with highest p-value, refit the model, repeat until
+all features are statistically significant ($p < 0.05$)
+\begin{enumerate}
+    \item Start with all features 
+    \item Train the model with the feature set
+    \item Evaluate statistical significance (p-value)
+    \item Remove the one with highest p-value
+    \item Repeat 2 - 4 till all the features are statistically significant (p < 0.05) 
+\end{enumerate}
+Where, \\
+\begin{itemize}
+    \item Null Hypothesis($H_0$) - The features has no effect 
+    \item Alternate Hypothesis($H_a$) - The feature has an effect
+\end{itemize}
+
+\subsubsection{Recursive Feature Elimination(RFE)}
+\begin{enumerate}
+    \item Start with all features
+    \item Train the model with the feature set
+    \item Evaluate Feature importance
+    \item Remove the one with least feature importance
+    \item Repeat 2 - 4 till you hit the desired number of features
+\end{enumerate}
 
 \subsection{Embedded Methods}
 
@@ -575,6 +616,105 @@ we know females are evacuated first
 
 \section{Supervised Learning}
 \section{Unsupervised Learning}
+
+\section{Time Series}
+A sequence of data points collected at specific points at time
+
+\subsection{Properties of Time series}
+
+\subsubsection{Order} 
+The data points are arranged in specific sequence based on time
+
+\subsubsection{Time dependence} 
+Observations are often dependent on previous data points(lags)
+
+\subsubsection{Stationarity}
+A time series is considered to be stationary if it's statistical properties 
+doesn't change, constant mean, constant variance, constant covariance 
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\linewidth]{images/timeseries1.png}
+    \caption{"Stationary Vs Non-stationary"}
+    \label{fig:enter-label}
+\end{figure}
+
+\subsubsection{Trend}
+Long time increase or decrease in the data , could be linear exponential
+or other forms.
+
+\subsubsection{Seasonality}
+Regular, repeating patterns at fixed interval (daily, weekly, yearly) \\
+\textbf{Example:} Ice cream sales peak every summer
+
+\subsubsection{Cyclic}
+Long term osscilations that doesn't have a fixed-period like Seasonality \\
+\textbf{Example:} Business cycles - Booms and recessions 
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\linewidth]{images/timeseries2.png}
+    \caption{"Stationary Vs Non-stationary"}
+    \label{fig:enter-label}
+\end{figure}
+
+\subsection{Suitability Test for TSA}
+How to find if traditional Time Series Analysis is suitable for the 
+given data
+\subsubsection{Time dependent}
+The given data should have a temporal dependency(time), TSA is about
+finding patterns across time
+
+\subsubsection{Auto Correlation}
+Conventional time series models often rely on the assumption that current 
+data point is dependent on previous data points(lags), ACF(auto correlation function) 
+or PACF(Partial ACF) to check the auto correlation
+
+\subsubsection{Stationary}
+Many TSA models assumes stationarity, you can still model a non-stationary model
+by making it stationary, it should atleast be feasible to make it as a stationary
+time series
+
+\subsubsection{Data Quality}
+Data quality is important for any machine learning model, outliers, sufficient
+data, data completeness, etc...
+
+\subsubsection{White noise}
+Data shouldn't be a pure white noise (random), you can't predict a random data \\
+White noise is a time series that satisfies following conditions
+\begin{itemize}
+    \item Zero mean
+    \item Constant Covariance 
+    \item Zero correlation with lags
+\end{itemize}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\linewidth]{images/timeseries3.png}
+    \caption{"Stationary Vs Non-stationary"}
+    \label{fig:enter-label}
+\end{figure}
+
+\section{Tests for time series}
+
+\subsection*{Stationarity}
+\subsection{Augumented Dicky Fuller Test (ADF)}
+Tests if a given time series is stationary or not, Ensures time series
+is stationary, critical for AR,MA,ARMA, and determines wheather the 
+differencing is neccessary in ARIMA
+
+
+\subsection*{Auto Corelation}
+\subsection{ACF}
+\subsection{PACF}
+\subsection*{Seasonality and Trend}
+\subsection{Time series decomposition}
+\subsection{Periodogram}
+\subsection*{Variance/ Volatility}
+\subsection{ARCH test}
+
+
+
 
 \section{Evaluation Metrics for Regression}
 
