@@ -701,11 +701,33 @@ White noise is a time series that satisfies following conditions
 \subsection{Augumented Dicky Fuller Test (ADF)}
 Tests if a given time series is stationary or not, Ensures time series
 is stationary, critical for AR,MA,ARMA, and determines wheather the 
-differencing is neccessary in ARIMA
+differencing is neccessary in ARIMA \\
+The Hypothesis of the test is as follows,
+\begin{itemize}
+    \item Null Hypothesis ($H_0$): Time series has a unit root - non-stationary
+    \item Alternate Hypothesis ($H_0$): Time series does not have a unit root - stationary
+\end{itemize}
+Calculate p-value, 
+\begin{itemize}
+    \item if p < 0.05 reject null's hypothesis stationary
+    \item if p > 0.05 failed reject null's hypothesis - non-stationary
+\end{itemize}
+ADF is often used to find d - number of differencing to make a TS stationary start with d = 0,
+increase until the null's hypothesis is rejected, usually you can stop after d = 2 as anything
+above 2 is super rare
 
+\subsection{Unit Root}
+To find unit root we assume the given time series 
+unit root basically means the coefficient of a past term is 1 (unit), thus it’s effects 
+persists if it can be found using the test we can use differencing(to make it stationary)
+and pass it to ARMA model, basically ARIMA to negate the unit root effect,  we can use dicky 
+fuller test to determine how many differencing is required for the TS to be 
 
 \subsection*{Auto Corelation}
-\subsection{ACF}
+\subsection{Auto Correlation Function(ACF)}
+Auto correlation Function is a tool used to measure
+
+
 \subsection{PACF}
 \subsection*{Seasonality and Trend}
 \subsection{Time series decomposition}
@@ -951,7 +973,7 @@ unwanted features to zero
 $$\text{L1} = \lambda \sum|w_i| $$
 
 \subsection{L2}
-L2 adds teh sum of coefficient squares to the loss function this 
+L2 adds the sum of coefficient squares to the loss function this 
 makes the gradient strength smooth, thus it won't reduce everything 
 to zero, but towards zero, use it when you think all features contribute
 to ur model

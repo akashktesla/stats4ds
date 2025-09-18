@@ -304,25 +304,25 @@ File: images/timeseries2.png Graphic file (type bmp)
  [27] [28]
 File: images/timeseries3.png Graphic file (type bmp)
 <images/timeseries3.png>
- [29] [30] [31]
-Underfull \hbox (badness 10000) in paragraph at lines 783--785
+ [29] [30] [31] [32]
+Underfull \hbox (badness 10000) in paragraph at lines 805--807
 
  []
 
-[32] [33] [34] [35] [36]
-Overfull \hbox (10.96146pt too wide) in paragraph at lines 922--924
+[33] [34] [35] [36] [37]
+Overfull \hbox (10.96146pt too wide) in paragraph at lines 944--946
 \TU/lmr/m/n/12 The ROC curve plots the True Positive Rate(TPR) vs False Positiv
 e Rate(FPR)
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 925--928
+Underfull \hbox (badness 10000) in paragraph at lines 947--950
 
  []
 
-[37] [38] (main.aux)
+[38] [39] (main.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
  )
-Output written on main.xdv (38 pages, 410296 bytes).
+Output written on main.xdv (39 pages, 421328 bytes).
